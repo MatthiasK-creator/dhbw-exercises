@@ -19,8 +19,8 @@ public class StreamTask {
 
     }
 
-    public static void writeFile(List<FootballPlayer> list){
-        try (var writer = Files.newBufferedWriter(Paths.get("/tmp/blub.csv"))){
+    public static void writeFile(List<FootballPlayer> list) {
+        try (var writer = Files.newBufferedWriter(Paths.get("/tmp/blub.csv"))) {
             writer.write(list.stream().reduce("", (acc, player) -> acc + player.toString() + ", ", (a, b) -> a + b));
 
         } catch (IOException e) {

@@ -3,8 +3,6 @@ package de.dhbw.lecture03;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
-
 /**
  * Dieser Test ist in der Aufgabenstellung nicht gefordert.
  * Es ist auch in Ordnung, wenn über eine Main-Methode geprüft wird, ob die Implementierung funktioniert.

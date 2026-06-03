@@ -12,6 +12,16 @@ import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 public class FetchUrls {
+    static void main() throws InterruptedException {
+        FetchUrls fetchUrls = new FetchUrls();
+        System.out.println("Erster Lauf mit Futures...");
+        fetchUrls.fetchUrlsWithFuture();
+        System.out.println("---Kurze Pause 1s---");
+        Thread.sleep(1000);
+        System.out.println("Zweiter Lauf mit CompleteableFutures...");
+        fetchUrls.fetchUrlsWithCompletableFuture();
+    }
+
     public void fetchUrlsWithFuture() {
         Runnable runnable = () -> {
 
@@ -66,16 +76,6 @@ public class FetchUrls {
 
             CompletableFuture.allOf(completableFutures.toArray(new CompletableFuture[0])).join();
         }
-    }
-
-    static void main() throws InterruptedException {
-        FetchUrls fetchUrls = new FetchUrls();
-        System.out.println("Erster Lauf mit Futures...");
-        fetchUrls.fetchUrlsWithFuture();
-        System.out.println("---Kurze Pause 1s---");
-        Thread.sleep(1000);
-        System.out.println("Zweiter Lauf mit CompleteableFutures...");
-        fetchUrls.fetchUrlsWithCompletableFuture();
     }
 
 }

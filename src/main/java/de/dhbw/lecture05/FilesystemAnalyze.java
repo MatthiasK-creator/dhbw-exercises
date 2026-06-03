@@ -9,6 +9,11 @@ import java.nio.file.attribute.BasicFileAttributes;
 import java.util.stream.Stream;
 
 public class FilesystemAnalyze {
+    static void main() {
+        FilesystemAnalyze analyze = new FilesystemAnalyze();
+        analyze.findLogs();
+    }
+
     public void findLogs() {
         // Paths.get("")-Parameter ist automatisch die Root-Ebene des Projekts, genau das, was wir brauchen.
         // Standardmäßig werden keinen Links gefolgt, weshalb hier keinerlei Option als Parameter gesetzt wird, um das zu erreichen.
@@ -28,10 +33,5 @@ public class FilesystemAnalyze {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    static void main() {
-        FilesystemAnalyze analyze = new FilesystemAnalyze();
-        analyze.findLogs();
     }
 }

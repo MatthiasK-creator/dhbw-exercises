@@ -12,8 +12,8 @@ package de.dhbw.lecture01;
 public class IncrementDecrement {
 
     static void main(String[] args) {
-        int i=0;
-        int j=0;
+        int i = 0;
+        int j = 0;
         j = ++i;
         int k = j++ + ++i;
         System.out.println("k: " + k);    // k: 3

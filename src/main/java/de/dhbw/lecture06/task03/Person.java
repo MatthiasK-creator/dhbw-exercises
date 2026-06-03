@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * Lösungen für die Aufgaben befinden sich in den Tests
  */
-public class Person implements Comparable<Person>{
+public class Person implements Comparable<Person> {
     private final String name;
     private final LocalDate age;
 

@@ -9,7 +9,7 @@ class StreamTaskTest {
 
     @Test
     void readFiles() {
-        List<FootballPlayer> player =  StreamTask.readFiles();
+        List<FootballPlayer> player = StreamTask.readFiles();
 
         StreamTask.writeFile(player);
 

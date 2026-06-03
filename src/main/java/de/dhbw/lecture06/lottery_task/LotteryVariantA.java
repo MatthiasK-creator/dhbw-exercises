@@ -27,17 +27,17 @@ public class LotteryVariantA {
 
         // Remember: usage of Set prevents duplicates
         // Assumption: "Superzahl" is also in range of 1-49, in reality it is a number from 0-9
-        while ( numbers.size() < 7 ) {
-            numbers.add( addNumber = r.nextInt( 49 ) + 1 ); // Autoboxing
+        while (numbers.size() < 7) {
+            numbers.add(addNumber = r.nextInt(49) + 1); // Autoboxing
         }
 
         // remove last added number => that's the bonus number!
-        numbers.remove( addNumber );
+        numbers.remove(addNumber);
 
-        for ( Integer no : numbers ) {
-            System.out.print( no + " " );
+        for (Integer no : numbers) {
+            System.out.print(no + " ");
         }
-        System.out.println( "Bonus number: " + addNumber );
+        System.out.println("Bonus number: " + addNumber);
 
     }
 

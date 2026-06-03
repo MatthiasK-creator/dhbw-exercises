@@ -10,6 +10,12 @@ import java.util.Objects;
 
 
 public class WordCounter {
+    static void main() throws URISyntaxException {
+        WordCounter counter = new WordCounter();
+        // Datei unter src/main/resources/lorem.txt
+        counter.countWords(Path.of(Objects.requireNonNull(WordCounter.class.getClassLoader().getResource("lorem.txt")).toURI()));
+    }
+
     public void countWords(Path path) {
         try {
 
@@ -30,11 +36,5 @@ public class WordCounter {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-    }
-
-    static void main() throws URISyntaxException {
-        WordCounter counter = new WordCounter();
-        // Datei unter src/main/resources/lorem.txt
-        counter.countWords(Path.of(Objects.requireNonNull(WordCounter.class.getClassLoader().getResource("lorem.txt")).toURI()));
     }
 }

@@ -12,9 +12,9 @@ public class LotteryVariantB {
         random = new Random();
     }
 
-    public LinkedHashSet<Integer> drawNumber(){
+    public LinkedHashSet<Integer> drawNumber() {
         LinkedHashSet<Integer> numbers = new LinkedHashSet<>();
-        while (numbers.size() < 7){
+        while (numbers.size() < 7) {
             // Annahme: "Superzahl" ist auch in der Spanne von 1-49, in der Realität ist sie in der Spanne 0-9
             numbers.add(random.nextInt(49) + 1);
         }

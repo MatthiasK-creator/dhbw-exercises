@@ -28,8 +28,8 @@ public class Ambulance extends Car {
 
     @Override
     public String toString() {
-        return super.toString()+
-                " Signal " + (signal ? "on":"off") + ".";
+        return super.toString() +
+                " Signal " + (signal ? "on" : "off") + ".";
     }
 
     public boolean hasSignal() {

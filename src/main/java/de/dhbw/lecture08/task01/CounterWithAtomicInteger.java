@@ -6,7 +6,7 @@ public class CounterWithAtomicInteger {
 
     private AtomicInteger count = new AtomicInteger(0);
 
-    public synchronized void increment(){
+    public synchronized void increment() {
         count.incrementAndGet();
     }
 
