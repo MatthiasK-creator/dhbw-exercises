@@ -1,17 +1,17 @@
 package de.dhbw.lecture08.task01;
 
 import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.RepeatedTest;
 
 import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.stream.IntStream;
 
-class CounterTest {
-    @Test
+class CounterWithAtomicIntegerTest {
+    @RepeatedTest(100)
     public void testCounter() {
-        Counter counterWithSynchronized = new Counter();
+        CounterWithAtomicInteger counterWithSynchronized = new CounterWithAtomicInteger();
 
         Runnable runnable = () -> {
             for (int i = 0; i < 10000; i++) {
@@ -26,8 +26,7 @@ class CounterTest {
         }
         var millisAfter = System.currentTimeMillis();
 
-        // Manchmal FALSE und genau das ist das Problem.
-        Assertions.assertNotEquals(100000, counterWithSynchronized.getCount());
+        Assertions.assertEquals(100000, counterWithSynchronized.getCount());
         System.out.println("Time: " + (millisAfter - millisBefore));
     }
 
