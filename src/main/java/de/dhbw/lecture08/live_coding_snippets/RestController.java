@@ -1,4 +1,4 @@
-package de.dhbw.lecture08;
+package de.dhbw.lecture08.live_coding_snippets;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -9,7 +9,8 @@ public class RestController {
         this.belegSpeichernService = belegSpeichernService;
     }
 
-    // POSt-MAPPING localhost:8080/beleg/
+    // Post-MAPPING localhost:8080/beleg/
+    // Caller ruft belegspeichern asynchron auf
     public void saveRoute() {
         CompletableFuture.runAsync(belegSpeichernService::save);
     }

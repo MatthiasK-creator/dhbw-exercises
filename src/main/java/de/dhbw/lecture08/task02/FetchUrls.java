@@ -12,6 +12,8 @@ import java.util.function.Supplier;
 import java.util.stream.IntStream;
 
 public class FetchUrls {
+    public static final String CATFACT_URL = "https://catfact.ninja/fact";
+
     static void main() throws InterruptedException {
         FetchUrls fetchUrls = new FetchUrls();
         System.out.println("Erster Lauf mit Futures...");
@@ -23,10 +25,12 @@ public class FetchUrls {
     }
 
     public void fetchUrlsWithFuture() {
+        // "Inline"-Runnable stellt hier nur eine Lösung da, genauso gut hätte es funktioniert diesen Part in eine separate Klasse auszualgern
+        // vermutlich wäre das auch der 'saubere' Weg, wenn dieser Code produktiv wäre.
+        // Zum 'Zeigen' ist es jedoch so geschickter, da man in keine Datei wechseln muss und so alles auf einem Blick sieht.
         Runnable runnable = () -> {
-
             try (HttpClient client = HttpClient.newHttpClient()) {
-                HttpResponse<String> response = client.send(HttpRequest.newBuilder().GET().uri(URI.create("https://catfact.ninja/fact")).build(),
+                HttpResponse<String> response = client.send(HttpRequest.newBuilder().GET().uri(URI.create(CATFACT_URL)).build(),
                         HttpResponse.BodyHandlers.ofString());
                 String s = response.body();
                 System.out.println("Fact: " + s);
@@ -51,9 +55,8 @@ public class FetchUrls {
 
     public void fetchUrlsWithCompletableFuture() {
         Supplier<String> runnable = () -> {
-
             try (HttpClient client = HttpClient.newHttpClient()) {
-                HttpResponse<String> response = client.send(HttpRequest.newBuilder().GET().uri(URI.create("https://catfact.ninja/fact")).build(),
+                HttpResponse<String> response = client.send(HttpRequest.newBuilder().GET().uri(URI.create(CATFACT_URL)).build(),
                         HttpResponse.BodyHandlers.ofString());
                 String s = response.body();
                 System.out.println("Fact: " + s);
@@ -75,6 +78,7 @@ public class FetchUrls {
             });
 
             CompletableFuture.allOf(completableFutures.toArray(new CompletableFuture[0])).join();
+            // Jetzt kann mit dem Ergebnis aller weiter gearbeitet werden...
         }
     }
 

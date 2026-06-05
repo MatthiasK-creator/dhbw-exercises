@@ -18,7 +18,7 @@ public class ListPersist implements IPersistable {
     @Override
     public Person load(String id) {
         for (Person person : personList) {
-            if (person.getId().equals(id)) {
+            if (person.id().equals(id)) {
                 return person;
             }
         }

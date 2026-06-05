@@ -8,7 +8,6 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Objects;
 
-
 public class WordCounter {
     static void main() throws URISyntaxException {
         WordCounter counter = new WordCounter();

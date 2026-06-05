@@ -36,11 +36,11 @@ class PersonTest {
         Collections.sort(personList);
 
         Assertions.assertEquals(2, personList.size());
-        Assertions.assertEquals("Matthias", personList.getFirst().getName());
+        Assertions.assertEquals("Matthias", personList.getFirst().name());
 
         // Explizite Sortierung, Verkettung möglich
-        personList.sort(Comparator.comparing(Person::getName));
-        Assertions.assertEquals("Malea", personList.getFirst().getName());
+        personList.sort(Comparator.comparing(Person::name));
+        Assertions.assertEquals("Malea", personList.getFirst().name());
 
     }
 

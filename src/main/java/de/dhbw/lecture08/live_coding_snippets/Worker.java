@@ -1,4 +1,4 @@
-package de.dhbw.lecture08;
+package de.dhbw.lecture08.live_coding_snippets;
 
 class Worker implements Runnable {
     private volatile boolean running = true;

@@ -2,7 +2,7 @@ package de.dhbw.lecture04;
 
 public class BankAccount {
     private double balance;
-    private double overdraftLimit;
+    private final double overdraftLimit;
 
     public BankAccount(double initialBalance, double overdraftLimit) {
         this.balance = initialBalance;

@@ -1,4 +1,4 @@
-package de.dhbw.lecture05;
+package de.dhbw.lecture05.task01;
 
 import java.io.IOException;
 import java.nio.file.Files;

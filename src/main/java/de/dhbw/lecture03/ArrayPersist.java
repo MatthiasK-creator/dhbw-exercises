@@ -30,7 +30,7 @@ public class ArrayPersist implements IPersistable {
     public Person load(String id) {
         for (int i = 0; i < personArray.length; i++) {
             Person tmpPerson = personArray[i];
-            if (tmpPerson != null && tmpPerson.getId().equals(id)) {
+            if (tmpPerson != null && tmpPerson.id().equals(id)) {
                 return tmpPerson;
             }
         }

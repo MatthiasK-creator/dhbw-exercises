@@ -15,6 +15,6 @@ public class UserService {
             return "Unbekannt";
         }
 
-        return user.getDisplayName();
+        return user.displayName();
     }
 }

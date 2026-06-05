@@ -26,7 +26,7 @@ class ArrayPersistTest {
         ArrayPersist arrayPersist = new ArrayPersist();
 
         arrayPersist.persist(person);
-        Person personToBeAsserted = arrayPersist.load(person.getId());
+        Person personToBeAsserted = arrayPersist.load(person.id());
 
         Assertions.assertEquals(person, personToBeAsserted);
     }

@@ -1,17 +1,15 @@
-package de.dhbw;
+package de.dhbw.lecture05.task02;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-class StreamTaskTest {
+class FootballPlayerFileHandlerTest {
 
     @Test
     void readFiles() {
-        List<FootballPlayer> player = StreamTask.readFiles();
-
-        StreamTask.writeFile(player);
+        List<FootballPlayer> player = FootballPlayerFileHandler.readFiles();
 
         player.forEach(System.out::println);
 

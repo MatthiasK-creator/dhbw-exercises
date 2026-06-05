@@ -26,7 +26,7 @@ public class VirtualThreadBenchmark {
     //    Nach 100 ms wird der Virtual Thread wieder eingeplant
     // Dadurch können Zehntausende wartende Tasks gleichzeitig existieren.
 
-    // Erkläre, warum dieselbe Strategie für CPU-Last NICHT funktionieren würde:
+    // AUFGABE: Erkläre, warum dieselbe Strategie für CPU-Last NICHT funktionieren würde:
     // Bei CPU-Last
     // Betrachte statt sleep():
     //  for (long i = 0; i < 1_000_000_000L; i++) {

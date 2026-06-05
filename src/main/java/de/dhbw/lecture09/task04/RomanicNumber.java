@@ -27,10 +27,12 @@ public class RomanicNumber {
 
     public static String toRoman(Integer number) {
         if (number == null) {
+            // Nicht gefordert, aber sinnvoll
             throw new IllegalArgumentException("Zahl darf nicht null sein");
         }
 
         if (number < 1 || number > 3999) {
+            // Nicht gefordert, aber sinnvoll
             throw new IllegalArgumentException("Römische Zahlen unterstützen nur Werte von 1 bis 3999");
         }
 
