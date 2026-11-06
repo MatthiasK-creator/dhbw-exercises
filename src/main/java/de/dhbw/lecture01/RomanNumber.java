@@ -44,11 +44,10 @@ public class RomanNumber {
      *  @return decimal value of the Roman number */
     public static int getValue(String s) {
         int result = 0;
-        for (int i = 0; i < s.length() - 1; i++)
-            if (getValue(s.charAt(i)) < getValue(s.charAt(i + 1)))
-                result -= getValue(s.charAt(i));
-            else
-                result += getValue(s.charAt(i));
+        for (int i = s.length() - 1; i > 0; i--)
+            if (getValue(s.charAt(i)) >= getValue(s.charAt(i - 1))) {
+                result -= getValue(s.charAt(i - 1));
+            }
         result += getValue(s.charAt(s.length() - 1));
         return result;
     }
